@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./swagger/swagger");
 
@@ -12,9 +13,10 @@ const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-  res.status(200).send("Bienvenue sur l'API du blog.");
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.use("/api/articles", articleRoutes);
@@ -26,5 +28,6 @@ app.use((req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Serveur démarré sur http://localhost:${PORT}`);
+  console.log(`Interface web : http://localhost:${PORT}`);
   console.log(`Documentation Swagger : http://localhost:${PORT}/api-docs`);
 });
