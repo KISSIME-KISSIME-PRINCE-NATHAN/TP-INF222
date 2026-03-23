@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestion Blog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="brand">
+        <h2>Blog du PRINCE </h2>
+        <p>Gestion intelligente</p>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>URL de l’API</h4>
+        <div class="api-box">http://localhost:3000/api/articles</div>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>Menu</h4>
+        <ul class="menu">
+          <li><a href="#dashboard-section">Tableau de bord</a></li>
+          <li><a href="#articles-section">Tous les articles</a></li>
+          <li><a href="#new-article-section">Nouvel article</a></li>
+          <li><a href="#search-section">Recherche</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section id="dashboard-section" class="section">
+        <div class="page-header">
+          <h1>Tableau de bord</h1>
+          <p>Vue d’ensemble de la gestion des articles du blog</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>Articles publiés</h3>
+            <p id="totalArticles">0</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>Catégories</h3>
+            <p id="totalCategories">0</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="new-article-section" class="section card">
+        <h2>Nouvel article</h2>
+        <form id="articleForm">
+          <div class="form-grid">
+            <div class="input-group">
+              <label for="title">Titre</label>
+              <input type="text" id="title" placeholder="Titre de l'article" required />
+            </div>
+
+            <div class="input-group">
+              <label for="author">Auteur</label>
+              <input type="text" id="author" placeholder="Nom de l'auteur" required />
+            </div>
+
+            <div class="input-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" />
+            </div>
+
+            <div class="input-group">
+              <label for="category">Catégorie</label>
+              <input type="text" id="category" placeholder="Ex: Tech" />
+            </div>
+
+            <div class="input-group full-width">
+              <label for="content">Contenu</label>
+              <textarea id="content" placeholder="Écris ici le contenu de l'article..." required></textarea>
+            </div>
+
+            <div class="input-group full-width">
+              <label for="tags">Tags</label>
+              <input type="text" id="tags" placeholder="Ex: nodejs, api, backend" />
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary">Publier l’article</button>
+        </form>
+        <p id="message"></p>
+      </section>
+
+      <section id="search-section" class="section card">
+        <h2>Recherche</h2>
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Rechercher un article..." />
+          <button onclick="searchArticles()" class="btn-secondary">Rechercher</button>
+          <button onclick="loadArticles()" class="btn-light">Tout afficher</button>
+        </div>
+      </section>
+
+      <section id="articles-section" class="section">
+        <div class="section-header">
+          <h2>Derniers articles</h2>
+          <p>Liste complète des articles enregistrés</p>
+        </div>
+
+        <div id="articlesList" class="articles-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
