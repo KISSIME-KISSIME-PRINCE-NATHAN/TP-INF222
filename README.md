@@ -1,3 +1,9 @@
+
+    Nom : KISSIME KISSIME
+    Prénom : PRINCE NATHAN
+    Matricule : 24G2151
+    UE : INF222 – Développement Backend
+    Filière : INFO FONDA L2
 # Blog API
 
 API backend de gestion d’articles de blog développée avec **Node.js**, **Express.js**, **SQLite** et **Swagger UI**, avec une interface web simple pour créer, afficher, rechercher et supprimer des articles. Ce projet a été réalisé dans le cadre du cours **INF222 – Développement Backend**.
@@ -44,7 +50,7 @@ blog-api/
     ├── style.css
     └── script.js
 
-INSTALLATION ET LANCEMENT
+**INSTALLATION ET LANCEMENT**
 
     Vérifier que Node.js et npm sont installés 
     Si nécessaire, installer Node.js et npm 
@@ -57,7 +63,7 @@ INSTALLATION ET LANCEMENT
     Interface web : http://localhost:3000
     Documentation Swagger : http://localhost:3000/api-docs
 
-Base de données
+**Base de données**
  Le projet utilise une base SQLite stockée dans le fichier database.db. La base et la table articles sont créées automatiquement au démarrage si elles n’existent pas.
 
 Endpoints principaux:
@@ -77,11 +83,6 @@ L’API vérifie que le titre, le contenu et l’auteur sont renseignés. Elle u
     404 Not Found
     500 Internal Server Error
 
-
-    Nom : KISSIME KISSIME
-    Prénom : PRINCE NATHAN
-    Matricule : 24G2151
-    UE : INF222 – Développement Backend
-    Filière : INFO FONDA L2
+  
 
 
